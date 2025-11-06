@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hiru's Turtle Vibe - Snorkeling Adventure in Thalaramba</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Smooth scrolling and offset for fixed navbar when using anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Ensure the anchored section is not hidden behind the fixed navbar */
+        #discover {
+            scroll-margin-top: 88px; /* adjust if your navbar height changes */
+        }
+        /* Layout fixes to prevent hero/welcome overlap */
+        body {
+            /* Reserve space for the fixed navbar so content doesn't sit beneath it */
+            padding-top: 60px;
+        }
+
+        .hero-section {
+            /* Reduce bottom padding so hero is more compact */
+            padding-bottom: 15px;
+            /* Reduce top padding */
+            padding-top: 0;
+        }
+
+        /* Make sure welcome section sits above any overlapping backgrounds and keep title size reasonable */
+        #discover {
+            position: relative;
+            z-index: 4;
+            padding-top: 10px;
+            background-color: var(--off-white);
+        }
+
+        /* Medium to large screens: reduce welcome section height and padding */
+        @media (min-width: 768px) {
+            /* Reduce section padding across tablet and desktop */
+            .welcome-section { padding: 3rem 0 !important; }
+
+            /* Limit image height on medium+ screens */
+            .welcome-image-wrapper img { max-height: 350px; object-fit: cover; }
+
+            /* Reduce section title and text sizes slightly */
+            .welcome-section .section-title { font-size: clamp(1.8rem, 4vw, 2.6rem) !important; margin-bottom: 1rem; }
+            .welcome-section .lead { font-size: 1rem; margin-bottom: 1.2rem; }
+            .welcome-section .feature-item { font-size: 1rem; margin-bottom: 0.8rem; }
+        }
+
+        /* Prevent oversized heading overlapping buttons on medium viewports */
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .welcome-section .section-title {
+                font-size: clamp(1.6rem, 4vw, 2.6rem) !important;
+            }
+        }
+
+        /* Mobile-specific fixes: avoid full viewport hero height and reduce heading size */
+        @media (max-width: 767px) {
+            /* Remove the min-vh-100 on the hero row so the hero doesn't fill the whole viewport under the fixed navbar */
+            .hero-section .row.min-vh-100 {
+                min-height: auto !important;
+                padding-top: 1.5rem;
+                padding-bottom: 1.5rem;
+            }
+
+            /* Reduce hero title size on small devices to prevent overlap */
+            .hero-title {
+                font-size: 1.8rem !important;
+                letter-spacing: 4px;
+            }
+
+            /* Reduce hero subtitle and button sizes for better stacking */
+            .hero-subtitle { font-size: 0.95rem !important; }
+            .hero-buttons .btn { padding: 0.75rem 1.5rem; font-size: 0.95rem; }
+
+            /* Give discover section a little extra top margin on mobile so content is visually separated */
+            #discover { margin-top: 0.5rem; }
+
+            /* Reduce welcome section padding on mobile to make it shorter */
+            .welcome-section { padding: 2rem 0 !important; }
+
+            /* Make the welcome image smaller on mobile */
+            .welcome-image-wrapper img { max-height: 250px; object-fit: cover; }
+
+            /* Reduce text size in welcome section */
+            .welcome-section .section-title { font-size: 1.4rem !important; margin-bottom: 0.8rem; }
+            .welcome-section .lead { font-size: 0.95rem; margin-bottom: 1rem; }
+            .welcome-section .feature-item { font-size: 0.95rem; margin-bottom: 0.6rem; }
+        }
+        /* Hero background image as a real element (fallback if pseudo-element is blocked) */
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1; /* sit below overlay (overlay z-index:2) */
+            opacity: 0.15;
+            pointer-events: none;
+        }
+
+        /* Disable the pseudo-element background where the real image is used to avoid double visuals */
+        .hero-section::before { display: none !important; }
+
+        /* Reduce hero row height globally so it doesn't force full viewport and cover book section */
+        .hero-section .row.min-vh-100 {
+            min-height: 45vh !important;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        /* Reduce navbar size and padding */
+        .navbar {
+            padding: 0.5rem 0 !important;
+        }
+
+        .navbar-brand .logo {
+            height: 45px !important;
+            width: auto;
+        }
+
+        .navbar-nav .nav-link {
+            padding: 0.25rem 0.75rem !important;
+            font-size: 0.85rem !important;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.jpg" alt="Hiru's Turtle Vibe Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-contact" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Use an actual <img> as a reliable hero background (helps when pseudo elements are blocked) -->
+        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1920" alt="" class="hero-bg" aria-hidden="true" />
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="row align-items-center min-vh-100">
+                <div class="col-lg-8 mx-auto text-center hero-content">
+                    <div class="turtle-icon-large mb-4">
+                        <i class="fas fa-water"></i>
+                    </div>
+                    <h1 class="hero-title mb-4" data-aos="fade-up">HIRU'S TURTLE VIBE</h1>
+                    <div class="hero-divider mb-4">
+                        <span class="divider-line"></span>
+                        <i class="fas fa-mask-snorkel mx-3"></i>
+                        <span class="divider-text">Snorkeling</span>
+                        <i class="fas fa-fish mx-3"></i>
+                        <span class="divider-line"></span>
+                    </div>
+                    <p class="hero-subtitle mb-5" data-aos="fade-up" data-aos-delay="200">
+                        Swim with Sea Turtles in Thalaramba's Crystal Waters
+                    </p>
+                    <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400">
+                        <a href="packages.html" class="btn btn-primary btn-lg me-3">Book Your Adventure</a>
+                        <a href="about.html" class="btn btn-outline-light btn-lg">Learn More</a>
+                    </div>
+                    <a href="#discover" class="scroll-indicator d-inline-block mt-5" aria-label="Scroll to Discover the Magic of the Ocean">
+                        <i class="fas fa-chevron-down"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section id="discover" class="welcome-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
+                    <div class="welcome-image-wrapper">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800" alt="Sea Turtle Swimming" class="img-fluid rounded-3 shadow-lg">
+                        <div class="image-badge">
+                            <i class="fas fa-turtle"></i>
+                            <span>Ethical Wildlife Experience</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <h2 class="section-title mb-4">Discover the Magic of the Ocean</h2>
+                    <p class="lead mb-4">
+                        Welcome to Hiru's Turtle Vibe, a snorkeling experience unlike any other in beautiful Thalaramba. 
+                        Guided by Hiru, whose warm smile and sunny spirit light up every trip, you'll explore crystal-clear, 
+                        azure waters where sea turtles, colorful fish, and vibrant coral await.
+                    </p>
+                    <div class="feature-list">
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>All snorkeling equipment included</span>
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Professional introduction and safety briefing</span>
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Ethical turtle feeding experience</span>
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-primary"></i>
+                            <span>Delicious homemade pancakes included</span>
+                        </div>
+                    </div>
+                    <a href="services.html" class="btn btn-primary mt-4">Explore Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Highlights -->
+    <section class="highlights-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">What Makes Us Special</h2>
+                <p class="section-subtitle">An unforgettable encounter with nature</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="highlight-card text-center">
+                        <div class="highlight-icon">
+                            <i class="fas fa-turtle"></i>
+                        </div>
+                        <h3>Meet Sea Turtles</h3>
+                        <p>Get up close with gentle sea turtles in their natural habitat. These magnificent creatures often come very close for an unforgettable encounter.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="highlight-card text-center">
+                        <div class="highlight-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+                        <h3>Crystal Clear Waters</h3>
+                        <p>Explore the pristine azure waters of Thalaramba, where visibility is perfect for spotting colorful fish and vibrant coral reefs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="highlight-card text-center">
+                        <div class="highlight-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <h3>Local Guide Passion</h3>
+                        <p>Hiru's love for the ocean and dedication to ethical wildlife experiences shines through in every adventure.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="zoom-in">
+                    <h2 class="mb-4">Ready for Your Turtle Adventure?</h2>
+                    <p class="lead mb-4">
+                        Join Hiru's Turtle Vibe and feel the joy of connecting with nature, the ocean, 
+                        and a local guide who truly loves what he does.
+                    </p>
+                    <a href="contact.html" class="btn btn-light btn-lg">Book Your Experience Today</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="assets/images/logo.jpg" alt="Hiru's Turtle Vibe" class="footer-logo mb-3">
+                    <p class="text-light-50">Experience the magic of snorkeling with sea turtles in Thalaramba's crystal-clear waters.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-light mb-3">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-light mb-3">Connect With Us</h5>
+                    <div class="social-links mb-3">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <p class="text-light-50 mb-2"><i class="fas fa-map-marker-alt me-2"></i>Thalaramba, Sri Lanka</p>
+                    <p class="text-light-50"><i class="fas fa-envelope me-2"></i>Contact us for bookings</p>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center text-light-50">
+                <p class="mb-0">&copy; 2025 Kavishkalk. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Dynamically measure the fixed navbar and apply offsets so anchors land correctly
+        (function() {
+            function updateNavbarOffset() {
+                var navbar = document.querySelector('.navbar');
+                var discover = document.getElementById('discover');
+                if (!navbar) return;
+                var height = Math.ceil(navbar.getBoundingClientRect().height || 0);
+                // Apply as body padding so content doesn't sit under the fixed navbar
+                document.body.style.paddingTop = height + 'px';
+                // Apply scroll-margin-top to the discover section so anchors are visible below navbar
+                if (discover) {
+                    // add a small extra gap of 8px for breathing room
+                    discover.style.setProperty('scroll-margin-top', (height + 8) + 'px');
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', updateNavbarOffset);
+            window.addEventListener('resize', updateNavbarOffset);
+            // Run also on load to catch late-rendered fonts/images
+            window.addEventListener('load', updateNavbarOffset);
+        })();
+    </script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

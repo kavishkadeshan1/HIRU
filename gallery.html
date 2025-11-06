@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Hiru's Turtle Vibe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/logo.jpg" alt="Hiru's Turtle Vibe Logo" class="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="packages.html">Packages</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn-contact" href="contact.html">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h1 class="page-title" data-aos="fade-up">Gallery</h1>
+                    <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">Impressions from our turtle adventures</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Filter -->
+    <section class="gallery-filter-section py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="gallery-filters text-center">
+                        <button class="filter-btn active" data-filter="all">All</button>
+                        <button class="filter-btn" data-filter="turtles">Turtles</button>
+                        <button class="filter-btn" data-filter="underwater">Underwater</button>
+                        <button class="filter-btn" data-filter="guests">Happy Guests</button>
+                        <button class="filter-btn" data-filter="scenic">Scenic Views</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Grid -->
+    <section class="gallery-section py-5">
+        <div class="container">
+            <div class="row g-4 gallery-grid">
+                <!-- Gallery Item 1 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="turtles" data-aos="fade-up">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Sea Turtle" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Green Sea Turtle</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="underwater" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600" alt="Snorkeling" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Crystal Clear Waters</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="turtles" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600" alt="Swimming Turtle" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Graceful Swimming</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="guests" data-aos="fade-up">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?w=600" alt="Happy Snorkelers" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Happy Adventurers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="underwater" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1582967788606-a171c1080cb0?w=600" alt="Coral Reef" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Vibrant Coral Reefs</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 6 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="scenic" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Beach View" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Thalaramba Beach</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 7 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="turtles" data-aos="fade-up">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=600" alt="Turtle Close-up" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Up Close Encounter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 8 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="guests" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=600" alt="Group Snorkeling" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Family Adventure</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 9 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="underwater" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=600" alt="Fish School" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Colorful Marine Life</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 10 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="scenic" data-aos="fade-up">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600" alt="Ocean Sunset" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Paradise Sunset</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 11 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="turtles" data-aos="fade-up" data-aos-delay="100">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600" alt="Turtle Feeding" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Feeding Time</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 12 -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="guests" data-aos="fade-up" data-aos-delay="200">
+                    <div class="gallery-card">
+                        <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?w=600" alt="Smiling Guests" class="img-fluid">
+                        <div class="gallery-overlay">
+                            <div class="overlay-content">
+                                <i class="fas fa-search-plus"></i>
+                                <p>Unforgettable Memories</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="video-section py-5 bg-light-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Experience the Magic</h2>
+                <p class="section-subtitle">Watch our adventures come to life</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="zoom-in">
+                    <div class="video-wrapper">
+                        <div class="ratio ratio-16x9">
+                            <iframe src="https://www.youtube.com/embed/bR9tLBUyrY4" title="Turtle Snorkeling Video" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">What Our Guests Say</h2>
+                <p class="section-subtitle">Hear from those who've experienced the turtle vibe</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"An absolutely magical experience! Hiru's passion for the turtles and the ocean is contagious. The turtles came so close, and the pancakes were delicious!"</p>
+                        <div class="testimonial-author">
+                            <strong>Sarah M.</strong>
+                            <span>United Kingdom</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Best snorkeling experience in Sri Lanka! Hiru made us feel safe and comfortable throughout. Seeing the turtles in their natural habitat was unforgettable."</p>
+                        <div class="testimonial-author">
+                            <strong>Michael & Lisa</strong>
+                            <span>Australia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <div class="stars mb-3">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <p class="testimonial-text">"Perfect for families! Our kids loved every moment. Hiru was patient and made sure everyone felt comfortable. The ethical approach to wildlife is commendable."</p>
+                        <div class="testimonial-author">
+                            <strong>The Johnson Family</strong>
+                            <span>USA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Feed Section -->
+    <section class="instagram-section py-5 bg-light-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title">Follow Our Journey</h2>
+                <p class="section-subtitle">
+                    <i class="fab fa-instagram"></i> @hirusturtlevibe
+                </p>
+                <a href="#" class="btn btn-primary mt-3">
+                    <i class="fab fa-instagram me-2"></i> Follow Us on Instagram
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center" data-aos="zoom-in">
+                    <h2 class="mb-4">Create Your Own Memories</h2>
+                    <p class="lead mb-4">
+                        Join us for an unforgettable turtle encounter and become part of our story. 
+                        Your adventure awaits!
+                    </p>
+                    <a href="packages.html" class="btn btn-light btn-lg me-3">View Packages</a>
+                    <a href="contact.html" class="btn btn-outline-light btn-lg">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="assets/images/logo.jpg" alt="Hiru's Turtle Vibe" class="footer-logo mb-3">
+                    <p class="text-light-50">Experience the magic of snorkeling with sea turtles in Thalaramba's crystal-clear waters.</p>
+                </div>
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="text-light mb-3">Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="packages.html">Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h5 class="text-light mb-3">Connect With Us</h5>
+                    <div class="social-links mb-3">
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                    <p class="text-light-50 mb-2"><i class="fas fa-map-marker-alt me-2"></i>Thalaramba, Sri Lanka</p>
+                    <p class="text-light-50"><i class="fas fa-envelope me-2"></i>Contact us for bookings</p>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center text-light-50">
+                <p class="mb-0">&copy; 2025 Kavishkalk. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
