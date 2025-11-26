@@ -350,7 +350,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Console message
-    console.log('%c🐢 Welcome to Hiru\'s Turtle Vibe! 🌊', 'font-size: 20px; color: #4A90A4; font-weight: bold;');
+    console.log('%c🐢 Welcome to Rumesh Diving Center! 🌊', 'font-size: 20px; color: #4A90A4; font-weight: bold;');
     console.log('%cExperience the magic of swimming with sea turtles in Thalaramba\'s crystal-clear waters.', 'font-size: 14px; color: #6B5E4F;');
 });
 

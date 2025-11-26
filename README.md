@@ -1,1 +1,1 @@
-# HIRU
+# Rumesh Diving Center
